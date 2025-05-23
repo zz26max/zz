@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小尾巴宠物生活馆 - 首页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2B6CB0',     
+            secondary: '#ED8936',   
+            neutral: {
+              100: '#F7FAFC',
+              200: '#EDF2F7',
+              300: '#E2E8F0',
+              400: '#CBD5E0',
+              500: '#A0AEC0',
+              600: '#718096',
+              700: '#4A5568',
+              800: '#2D3748',
+              900: '#1A202C',
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .transition-custom {
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .navbar {
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .navbar-scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="font-inter text-neutral-800 bg-neutral-100">
+  <nav id="navbar" class="navbar fixed w-full z-50 bg-white/80 backdrop-blur-sm">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary flex items-center" onclick="openPage('index.html')">
+        <i class="fa-solid fa-paw mr-2"></i>小尾巴宠物
+      </a>
+      
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="text-primary font-medium" onclick="openPage('index.html')">首页</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('services.html')">服务项目</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('about.html')">关于我们</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('gallery.html')">美容案例</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('contact.html')">预约服务</a>
+      </div>
+      
+      <button id="menu-toggle" class="md:hidden text-neutral-700 focus:outline-none">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+      <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+        <a href="#" class="text-primary py-2 border-b border-neutral-200" onclick="openPage('index.html')">首页</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('services.html')">服务项目</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('about.html')">关于我们</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('gallery.html')">美容案例</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2" onclick="openPage('contact.html')">预约服务</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="pt-20 md:pt-0 h-screen flex items-center relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="index.1.jpg" alt="宠物背景" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-2xl">
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight text-shadow mb-6 fade-in">
+          专业宠物服务，<br>
+          <span class="text-secondary">用心呵护每一只毛孩子</span>
+        </h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 text-white/90 fade-in" style="animation-delay: 0.2s">
+          提供美容、寄养、医疗一站式服务，让您的爱宠享受专业呵护
+        </p>
+        <a href="#" class="inline-block bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-8 rounded-full shadow-lg transition-custom hover:shadow-xl hover:-translate-y-1 fade-in" style="animation-delay: 0.4s" onclick="openPage('contact.html')">
+          立即预约 <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#" class="text-white/80 hover:text-white" onclick="openPage('services.html')">
+        <i class="fa-solid fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-neutral-900 mb-4">我们的特色服务</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">为您的爱宠提供全方位的贴心服务，让它们健康快乐成长</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services.html')">
+          <div class="h-48 overflow-hidden">
+            <img src="index.2.jpg" alt="宠物美容" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+              <i class="fa-solid fa-scissors text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">宠物美容</h3>
+            <p class="text-neutral-600">提供洗澡、造型修剪、指甲护理等全方位美容服务，使用天然无刺激洗护用品。</p>
+          </div>
+        </div>
+        
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services.html')">
+          <div class="h-48 overflow-hidden">
+            <img src="index.3.jpg" alt="宠物寄养" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+              <i class="fa-solid fa-home text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">宠物寄养</h3>
+            <p class="text-neutral-600">独立猫别墅/犬舍，24小时专人照顾，每日三次遛弯，实时监控让您随时了解爱宠动态。</p>
+          </div>
+        </div>
+        
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services.html')">
+          <div class="h-48 overflow-hidden">
+            <img src="index.4.jpg" alt="宠物医疗" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+              <i class="fa-solid fa-stethoscope text-primary text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">宠物医疗</h3>
+            <p class="text-neutral-600">与专业兽医合作，提供疫苗接种、体内外驱虫、健康检查等基础医疗服务。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center text-primary hover:text-primary/80 font-medium" onclick="openPage('services.html')">
+          查看全部服务 <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fa-solid fa-paw mr-2"></i>小尾巴宠物
+          </h3>
+          <p class="text-neutral-400 mb-4">专业宠物服务，用心呵护每一只毛孩子</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-weixin text-xl"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">服务项目</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物美容</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物寄养</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物医疗</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物用品</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">关于我们</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li><a href="#" onclick="openPage('about.html')" class="hover:text-white transition-custom">品牌介绍</a></li>
+            <li><a href="#" onclick="openPage('about.html')" class="hover:text-white transition-custom">团队成员</a></li>
+            <li><a href="#" onclick="openPage('gallery.html')" class="hover:text-white transition-custom">美容案例</a></li>
+            <li><a href="#" onclick="openPage('contact.html')" class="hover:text-white transition-custom">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">联系方式</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li class="flex items-start">
+              <i class="fa-solid fa-map-marker-alt mr-2 mt-1"></i>
+              <span>厦门市思明区莲前西路123号</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-phone mr-2 mt-1"></i>
+              <span>0592-12345678</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope mr-2 mt-1"></i>
+              <span>contact@xiaoweiba.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-clock mr-2 mt-1"></i>
+              <span>周一至周日 9:00-20:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500">
+        <p>&copy; 2025 小尾巴宠物生活馆 | 学号：24300102 姓名：陈颖 | 版权所有</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+    
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    function openPage(pageName) {
+      window.open(pageName, '_blank');
+      return false; 
+    }
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.service-card, .fade-in');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('fade-in');
+          }
+        });
+      };
+      
+      animateOnScroll();
+      
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+</html>

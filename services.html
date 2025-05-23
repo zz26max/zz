@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">B 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小尾巴宠物生活馆 - 服务项目</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2B6CB0',     
+            secondary: '#ED8936',   
+            neutral: {
+              100: '#F7FAFC',
+              200: '#EDF2F7',
+              300: '#E2E8F0',
+              400: '#CBD5E0',
+              500: '#A0AEC0',
+              600: '#718096',
+              700: '#4A5568',
+              800: '#2D3748',
+              900: '#1A202C',
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .transition-custom {
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .navbar {
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .navbar-scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="font-inter text-neutral-800 bg-neutral-100">
+  <nav id="navbar" class="navbar fixed w-full z-50 bg-white/80 backdrop-blur-sm">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary flex items-center" onclick="openPage('index.html')">
+        <i class="fa-solid fa-paw mr-2"></i>小尾巴宠物
+      </a>
+      
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('index.html')">首页</a>
+        <a href="#" class="text-primary font-medium" onclick="openPage('services.html')">服务项目</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('about.html')">关于我们</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('gallery.html')">美容案例</a>
+        <a href="#" class="text-neutral-700 hover:text-primary transition-custom font-medium" onclick="openPage('contact.html')">预约服务</a>
+      </div>
+      
+      <button id="menu-toggle" class="md:hidden text-neutral-700 focus:outline-none">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+      <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('index.html')">首页</a>
+        <a href="#" class="text-primary py-2 border-b border-neutral-200" onclick="openPage('services.html')">服务项目</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('about.html')">关于我们</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2 border-b border-neutral-200" onclick="openPage('gallery.html')">美容案例</a>
+        <a href="#" class="text-neutral-700 hover:text-primary py-2" onclick="openPage('contact.html')">预约服务</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-24 pb-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-neutral-900 mb-4">我们的服务项目</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">为您的爱宠提供全方位的贴心服务，让它们健康快乐成长</p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="#" class="px-6 py-2 bg-primary text-white rounded-full shadow-md hover:shadow-lg transition-custom" onclick="openPage('services.html?category=all')">全部服务</a>
+        <a href="#" class="px-6 py-2 bg-neutral-200 text-neutral-700 rounded-full shadow-md hover:shadow-lg hover:bg-neutral-300 transition-custom" onclick="openPage('services.html?category=beauty')">美容服务</a>
+        <a href="#" class="px-6 py-2 bg-neutral-200 text-neutral-700 rounded-full shadow-md hover:shadow-lg hover:bg-neutral-300 transition-custom" onclick="openPage('services.html?category=boarding')">寄养服务</a>
+        <a href="#" class="px-6 py-2 bg-neutral-200 text-neutral-700 rounded-full shadow-md hover:shadow-lg hover:bg-neutral-300 transition-custom" onclick="openPage('services.html?category=medical')">医疗服务</a>
+        <a href="#" class="px-6 py-2 bg-neutral-200 text-neutral-700 rounded-full shadow-md hover:shadow-lg hover:bg-neutral-300 transition-custom" onclick="openPage('services.html?category=other')">其他服务</a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=1')">
+          <div class="h-56 overflow-hidden">
+            <img src="jcspa.jpg" alt="基础美容套餐" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">基础美容套餐</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">美容</span>
+            </div>
+            <p class="text-neutral-600 mb-4">包含专业洗澡、吹干、梳毛、指甲修剪、耳道清洁、肛门腺清理。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥88起</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=1')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=2')">
+          <div class="h-56 overflow-hidden">
+            <img src="index.2.jpg" alt="豪华美容套餐" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">豪华美容套餐</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">美容</span>
+            </div>
+            <p class="text-neutral-600 mb-4">包含基础美容套餐所有项目，另加全身造型修剪、香波护理、去味喷雾。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥168起</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=2')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=3')">
+          <div class="h-56 overflow-hidden">
+            <img src="index.3.jpg" alt="宠物寄养服务" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">宠物寄养服务</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">寄养</span>
+            </div>
+            <p class="text-neutral-600 mb-4">独立猫别墅/犬舍，24小时专人照顾，每日三次遛弯，实时监控让您随时了解爱宠动态。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥168/天</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=3')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=4')">
+          <div class="h-56 overflow-hidden">
+            <img src="ymjz.jpg" alt="疫苗接种" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">疫苗接种</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">医疗</span>
+            </div>
+            <p class="text-neutral-600 mb-4">提供猫三联、犬六联、狂犬疫苗接种服务，专业兽医操作，全程跟踪观察。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥180/针</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=4')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=5')">
+          <div class="h-56 overflow-hidden">
+            <img src="qc.jpg" alt="体内外驱虫" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">体内外驱虫</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">医疗</span>
+            </div>
+            <p class="text-neutral-600 mb-4">使用进口驱虫药品，专业操作，有效驱除宠物体内外寄生虫，保障健康。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥120起</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=5')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-custom group cursor-pointer" onclick="openPage('services/detail.html?id=6')">
+          <div class="h-56 overflow-hidden">
+            <img src="SPA.jpg" alt="宠物SPA" class="w-full h-full object-cover group-hover:scale-105 transition-custom duration-500">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-semibold text-neutral-900">宠物SPA</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">其他</span>
+            </div>
+            <p class="text-neutral-600 mb-4">包含温泉浴、按摩、香薰护理，舒缓宠物压力，促进血液循环，改善毛发质量。</p>
+            <div class="flex justify-between items-center">
+              <span class="text-primary font-bold text-lg">¥228起</span>
+              <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center" onclick="openPage('contact.html?service=6')">
+                立即预约 <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-neutral-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-neutral-900 mb-4">服务流程</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">简单几步，让您的爱宠享受专业服务</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom relative">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">1</div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">在线预约</h3>
+          <p class="text-neutral-600">通过网站或电话预约您需要的服务和时间，我们会尽快确认。</p>
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-primary text-2xl">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom relative">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">2</div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">到店服务</h3>
+          <p class="text-neutral-600">按照预约时间带宠物到店，我们的专业人员会进行服务前检查。</p>
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-primary text-2xl">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom relative">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">3</div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">专业服务</h3>
+          <p class="text-neutral-600">我们的专业团队会按照您的需求为宠物提供高质量的服务。</p>
+          <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-primary text-2xl">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">4</div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">服务确认</h3>
+          <p class="text-neutral-600">服务完成后，您可以检查服务效果并确认，满意后接走宠物。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fa-solid fa-paw mr-2"></i>小尾巴宠物
+          </h3>
+          <p class="text-neutral-400 mb-4">专业宠物服务，用心呵护每一只毛孩子</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-weixin text-xl"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-weibo text-xl"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-custom">
+              <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">服务项目</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物美容</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物寄养</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物医疗</a></li>
+            <li><a href="#" onclick="openPage('services.html')" class="hover:text-white transition-custom">宠物用品</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">关于我们</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li><a href="#" onclick="openPage('about.html')" class="hover:text-white transition-custom">品牌介绍</a></li>
+            <li><a href="#" onclick="openPage('about.html')" class="hover:text-white transition-custom">团队成员</a></li>
+            <li><a href="#" onclick="openPage('gallery.html')" class="hover:text-white transition-custom">美容案例</a></li>
+            <li><a href="#" onclick="openPage('contact.html')" class="hover:text-white transition-custom">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">联系方式</h3>
+          <ul class="space-y-2 text-neutral-400">
+            <li class="flex items-start">
+              <i class="fa-solid fa-map-marker-alt mr-2 mt-1"></i>
+              <span>厦门市思明区莲前西路123号</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-phone mr-2 mt-1"></i>
+              <span>0592-12345678</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope mr-2 mt-1"></i>
+              <span>contact@xiaoweiba.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-clock mr-2 mt-1"></i>
+              <span>周一至周日 9:00-20:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500">
+        <p>&copy; 2025 小尾巴宠物生活馆 | 学号：24300102 姓名：陈颖 | 版权所有</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+    
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    function openPage(pageName) {
+      window.open(pageName, '_blank');
+      return false; 
+    }
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.service-card, .fade-in');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('fade-in');
+          }
+        });
+      };
+      
+      animateOnScroll();
+      
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+</html>

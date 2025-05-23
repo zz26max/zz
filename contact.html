@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小尾巴宠物 - 预约服务</title>
+</head>
+<body>
+  <header>...</header>
+
+  <main style="padding: 2rem; max-width: 600px; margin: 0 auto;">
+    <h2 style="color: #2B6CB0; text-align: center; margin-bottom: 2rem;">预约宠物服务</h2>
+    <form id="contactForm" style="display: grid; gap: 1rem;">
+      <label>
+        姓名：
+        <input type="text" name="name" required placeholder="请填写姓名">
+      </label>
+      <label>
+        联系方式：
+        <input type="tel" name="phone" required placeholder="请填写手机号">
+      </label>
+      <label>
+        预约时间：
+        <input type="datetime-local" name="time" required>
+      </label>
+      <button type="submit" style="background: #2B6CB0; color: white; padding: 1rem; border-radius: 8px; cursor: pointer;">
+        提交预约
+      </button>
+    </form>
+  </main>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (contactForm.checkValidity()) {
+        const name = contactForm.elements.name.value;
+        localStorage.setItem('lastVisitorName', name);
+        alert(`预约成功！感谢您，${name}！`);
+        contactForm.reset();
+      }
+    });
+  </script>
+</body>
+</html>
